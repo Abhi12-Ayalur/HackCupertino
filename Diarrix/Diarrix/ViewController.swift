@@ -8,13 +8,14 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class ViewController: UIViewController {
-    
-    let ref = FIRDatabase.database().reference(fromURL: "https://diarrix-aa799.firebaseio.com/")
-
+    var ref : FIRDatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func signUpUser(_ sender: Any) {
+        var ref = FIRDatabase.database().reference(fromURL: "https://diarrix-aa799.firebaseio.com/")
         if signUpEmail.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
             
@@ -47,8 +49,12 @@ class ViewController: UIViewController {
                     print("You have successfully signed up")
                     
                     let user = FIRAuth.auth()?.currentUser
-                    let uid = user?.uid
-                    let usersRef = self.ref.child("users").child(uid!)
+                    var name = ""
+                    if let uid = user?.uid{
+                        name = uid
+                        print(name)
+                    }
+                    let usersRef = ref.child("users").child(name)
                     let values = ["firstName": self.signUpFirstName.text!, "lastName": self.signUpLastName.text!, "Email": self.signUpEmail.text!, "phoneNumber": self.signUpPhoneNumber.text!, "Password": self.signUpPassword.text!]
                     usersRef.ref.updateChildValues(values, withCompletionBlock: { (error, ref)
                         in
