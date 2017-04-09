@@ -58,10 +58,12 @@ class ViewController: UIViewController {
                     let values = ["firstName": self.signUpFirstName.text!, "lastName": self.signUpLastName.text!, "Email": self.signUpEmail.text!, "phoneNumber": self.signUpPhoneNumber.text!, "Password": self.signUpPassword.text!]
                     usersRef.ref.updateChildValues(values, withCompletionBlock: { (error, ref)
                         in
+                        
                         if error != nil{
                             print(error)
                             return
                         }
+                        self.performSegue(withIdentifier: "SignUpToTab", sender: self)
                     })
                     
                     
@@ -77,7 +79,28 @@ class ViewController: UIViewController {
             }
         }
     }
-}
     
+    @IBOutlet weak var loginEmail: UITextField!
+    @IBOutlet weak var loginPassword: UITextField!
+    @IBAction func loginUser(_ sender: Any) {
+        FIRAuth.auth()?.signIn(withEmail: loginEmail.text!, password: loginPassword.text!, completion: { (user, error)
+            in
+            if error != nil{
+                let alertController = UIAlertController(title: "Incorrect Email or Password", message: error?.localizedDescription, preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+            else{
+                self.performSegue(withIdentifier: "LoginToTab", sender: self)
+            }
+        })
+        
+    }
+
+}
+
 
 
