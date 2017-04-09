@@ -52,7 +52,6 @@ class ViewController: UIViewController {
                     var name = ""
                     if let uid = user?.uid{
                         name = uid
-                        print(name)
                     }
                     let usersRef = ref.child("users").child(name)
                     let values = ["firstName": self.signUpFirstName.text!, "lastName": self.signUpLastName.text!, "Email": self.signUpEmail.text!, "phoneNumber": self.signUpPhoneNumber.text!, "Password": self.signUpPassword.text!]
