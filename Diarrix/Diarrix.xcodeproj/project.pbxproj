@@ -18,6 +18,7 @@
 		AD7F0C861E99CA16000097C6 /* DiarrixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F0C851E99CA16000097C6 /* DiarrixUITests.swift */; };
 		AD7F0C961E99CC7F000097C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD7F0C951E99CC7F000097C6 /* GoogleService-Info.plist */; };
 		B12C5DFDD8D90CCA35DDF0B0 /* Pods_DiarrixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6643D36229932680C117F0 /* Pods_DiarrixUITests.framework */; };
+		E98F9E4D1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98F9E4C1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		AD7F0C951E99CC7F000097C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B5E87A6EA5CD7CF16988EAFE /* Pods-Diarrix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diarrix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diarrix/Pods-Diarrix.release.xcconfig"; sourceTree = "<group>"; };
 		B6919333C73043B2052F2FB1 /* Pods-DiarrixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiarrixTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiarrixTests/Pods-DiarrixTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E98F9E4C1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neutra-Text-TF-Light-Alt_32149.ttf"; sourceTree = "<group>"; };
 		F6D6DC400F10D78BF1070AED /* Pods-DiarrixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiarrixTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiarrixTests/Pods-DiarrixTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				AD7F0C6C1E99CA16000097C6 /* Assets.xcassets */,
 				AD7F0C6E1E99CA16000097C6 /* LaunchScreen.storyboard */,
 				AD7F0C711E99CA16000097C6 /* Info.plist */,
+				E98F9E4C1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf */,
 			);
 			path = Diarrix;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				AD7F0C961E99CC7F000097C6 /* GoogleService-Info.plist in Resources */,
 				AD7F0C6D1E99CA16000097C6 /* Assets.xcassets in Resources */,
 				AD7F0C6B1E99CA16000097C6 /* Main.storyboard in Resources */,
+				E98F9E4D1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +706,7 @@
 				AD7F0C8C1E99CA17000097C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD7F0C8D1E99CA17000097C6 /* Build configuration list for PBXNativeTarget "DiarrixTests" */ = {
 			isa = XCConfigurationList;
@@ -710,6 +715,7 @@
 				AD7F0C8F1E99CA17000097C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD7F0C901E99CA17000097C6 /* Build configuration list for PBXNativeTarget "DiarrixUITests" */ = {
 			isa = XCConfigurationList;
@@ -718,6 +724,7 @@
 				AD7F0C921E99CA17000097C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
