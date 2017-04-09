@@ -8,7 +8,18 @@
 
 import UIKit
 
+class resolvedFeedTableViewCell: UITableViewCell{
+    
+    @IBOutlet weak var typeOfResolvedEventLabel: UILabel!
+    @IBOutlet weak var resolvedDescriptionLabel: UILabel!
+    
+
+}
+
 class ResolvedFeedTableViewController: UITableViewController {
+    
+    var resolvedEvents = ["aids", "ebola", "hiv"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +29,7 @@ class ResolvedFeedTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +41,27 @@ class ResolvedFeedTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 3
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+      
 
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resolvedCell", for: indexPath) as! resolvedFeedTableViewCell
+        
+        let eventName = resolvedEvents[indexPath.row]
+        print(eventName)
+        cell.typeOfResolvedEventLabel?.text = eventName
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
