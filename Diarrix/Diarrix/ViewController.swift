@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func signUpUser(_ sender: Any) {
-        var ref = FIRDatabase.database().reference(fromURL: "https://diarrix-aa799.firebaseio.com/")
+        let ref = FIRDatabase.database().reference(fromURL: "https://diarrix-aa799.firebaseio.com/")
         if signUpEmail.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
             

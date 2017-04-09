@@ -21,6 +21,9 @@
 		E98F9E4D1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98F9E4C1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf */; };
 		E9962BF61E99F7CD004F1182 /* NewFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9962BF51E99F7CD004F1182 /* NewFeedTableViewController.swift */; };
 		E9962BFC1E9A088C004F1182 /* ResolvedFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9962BFB1E9A088C004F1182 /* ResolvedFeedTableViewController.swift */; };
+		E9A6C6841E9A352E00B949D6 /* EventUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6C6831E9A352E00B949D6 /* EventUpdateViewController.swift */; };
+		E9A6C6861E9A6CDA00B949D6 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6C6851E9A6CDA00B949D6 /* UpdateViewController.swift */; };
+		E9A6C6881E9A706200B949D6 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A6C6871E9A706200B949D6 /* ReportViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		E98F9E4C1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neutra-Text-TF-Light-Alt_32149.ttf"; sourceTree = "<group>"; };
 		E9962BF51E99F7CD004F1182 /* NewFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeedTableViewController.swift; sourceTree = "<group>"; };
 		E9962BFB1E9A088C004F1182 /* ResolvedFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolvedFeedTableViewController.swift; sourceTree = "<group>"; };
+		E9A6C6831E9A352E00B949D6 /* EventUpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUpdateViewController.swift; sourceTree = "<group>"; };
+		E9A6C6851E9A6CDA00B949D6 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		E9A6C6871E9A706200B949D6 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		F6D6DC400F10D78BF1070AED /* Pods-DiarrixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiarrixTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiarrixTests/Pods-DiarrixTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +144,9 @@
 				AD7F0C691E99CA16000097C6 /* Main.storyboard */,
 				E9962BFB1E9A088C004F1182 /* ResolvedFeedTableViewController.swift */,
 				E9962BF51E99F7CD004F1182 /* NewFeedTableViewController.swift */,
+				E9A6C6871E9A706200B949D6 /* ReportViewController.swift */,
+				E9A6C6851E9A6CDA00B949D6 /* UpdateViewController.swift */,
+				E9A6C6831E9A352E00B949D6 /* EventUpdateViewController.swift */,
 				AD7F0C6C1E99CA16000097C6 /* Assets.xcassets */,
 				AD7F0C6E1E99CA16000097C6 /* LaunchScreen.storyboard */,
 				AD7F0C711E99CA16000097C6 /* Info.plist */,
@@ -461,10 +470,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A6C6841E9A352E00B949D6 /* EventUpdateViewController.swift in Sources */,
 				E9962BF61E99F7CD004F1182 /* NewFeedTableViewController.swift in Sources */,
 				AD7F0C681E99CA16000097C6 /* ViewController.swift in Sources */,
 				AD7F0C661E99CA16000097C6 /* AppDelegate.swift in Sources */,
 				E9962BFC1E9A088C004F1182 /* ResolvedFeedTableViewController.swift in Sources */,
+				E9A6C6861E9A6CDA00B949D6 /* UpdateViewController.swift in Sources */,
+				E9A6C6881E9A706200B949D6 /* ReportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

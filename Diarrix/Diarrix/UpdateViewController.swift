@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import Firebase
 
 class UpdateViewController: UIViewController {
 
+    @IBOutlet weak var updateDescriptionField: UITextField!
+    var ref : FIRDatabaseReference!
+    var timestamp = ""
+    @IBAction func updateDescButton(_ sender: Any) {
+        let ref = FIRDatabase.database().reference()
+      
+        ref.child("events").child(timestamp).updateChildValues((["description": updateDescriptionField.text!]))
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
 
@@ -31,5 +41,9 @@ class UpdateViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
 
 }
