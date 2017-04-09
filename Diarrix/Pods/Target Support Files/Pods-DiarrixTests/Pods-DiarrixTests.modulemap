@@ -1,0 +1,6 @@
+framework module Pods_DiarrixTests {
+  umbrella header "Pods-DiarrixTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

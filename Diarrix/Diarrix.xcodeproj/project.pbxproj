@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D50F8ED42ADA04C25AE74E9 /* Pods_Diarrix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A564467BBC191EB3FC62E072 /* Pods_Diarrix.framework */; };
+		530849CD8448FDB90A9F1691 /* Pods_DiarrixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468A33368E8D8532CDA4E126 /* Pods_DiarrixTests.framework */; };
+		AD7F0C661E99CA16000097C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F0C651E99CA16000097C6 /* AppDelegate.swift */; };
+		AD7F0C681E99CA16000097C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F0C671E99CA16000097C6 /* ViewController.swift */; };
+		AD7F0C6B1E99CA16000097C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7F0C691E99CA16000097C6 /* Main.storyboard */; };
+		AD7F0C6D1E99CA16000097C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7F0C6C1E99CA16000097C6 /* Assets.xcassets */; };
+		AD7F0C701E99CA16000097C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7F0C6E1E99CA16000097C6 /* LaunchScreen.storyboard */; };
+		AD7F0C7B1E99CA16000097C6 /* DiarrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F0C7A1E99CA16000097C6 /* DiarrixTests.swift */; };
+		AD7F0C861E99CA16000097C6 /* DiarrixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F0C851E99CA16000097C6 /* DiarrixUITests.swift */; };
+		AD7F0C961E99CC7F000097C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD7F0C951E99CC7F000097C6 /* GoogleService-Info.plist */; };
+		B12C5DFDD8D90CCA35DDF0B0 /* Pods_DiarrixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6643D36229932680C117F0 /* Pods_DiarrixUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD7F0C771E99CA16000097C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD7F0C5A1E99CA16000097C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD7F0C611E99CA16000097C6;
+			remoteInfo = Diarrix;
+		};
+		AD7F0C821E99CA16000097C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD7F0C5A1E99CA16000097C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD7F0C611E99CA16000097C6;
+			remoteInfo = Diarrix;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E6643D36229932680C117F0 /* Pods_DiarrixUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiarrixUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		468A33368E8D8532CDA4E126 /* Pods_DiarrixTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiarrixTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51FD7C627A0103D612E180C7 /* Pods-DiarrixUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiarrixUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiarrixUITests/Pods-DiarrixUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		77A143B7A6719DCF93DAE87E /* Pods-Diarrix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diarrix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diarrix/Pods-Diarrix.debug.xcconfig"; sourceTree = "<group>"; };
+		84B0B0C3D59915D00C88E2A7 /* Pods-DiarrixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiarrixUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiarrixUITests/Pods-DiarrixUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A564467BBC191EB3FC62E072 /* Pods_Diarrix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diarrix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD7F0C621E99CA16000097C6 /* Diarrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diarrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD7F0C651E99CA16000097C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD7F0C671E99CA16000097C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD7F0C6A1E99CA16000097C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD7F0C6C1E99CA16000097C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD7F0C6F1E99CA16000097C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD7F0C711E99CA16000097C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD7F0C761E99CA16000097C6 /* DiarrixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiarrixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD7F0C7A1E99CA16000097C6 /* DiarrixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarrixTests.swift; sourceTree = "<group>"; };
+		AD7F0C7C1E99CA16000097C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD7F0C811E99CA16000097C6 /* DiarrixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiarrixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD7F0C851E99CA16000097C6 /* DiarrixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarrixUITests.swift; sourceTree = "<group>"; };
+		AD7F0C871E99CA16000097C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD7F0C951E99CC7F000097C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5E87A6EA5CD7CF16988EAFE /* Pods-Diarrix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diarrix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diarrix/Pods-Diarrix.release.xcconfig"; sourceTree = "<group>"; };
+		B6919333C73043B2052F2FB1 /* Pods-DiarrixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiarrixTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiarrixTests/Pods-DiarrixTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F6D6DC400F10D78BF1070AED /* Pods-DiarrixTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiarrixTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiarrixTests/Pods-DiarrixTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD7F0C5F1E99CA16000097C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D50F8ED42ADA04C25AE74E9 /* Pods_Diarrix.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD7F0C731E99CA16000097C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				530849CD8448FDB90A9F1691 /* Pods_DiarrixTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD7F0C7E1E99CA16000097C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B12C5DFDD8D90CCA35DDF0B0 /* Pods_DiarrixUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A31FDCF3136A89829CA5C012 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A564467BBC191EB3FC62E072 /* Pods_Diarrix.framework */,
+				468A33368E8D8532CDA4E126 /* Pods_DiarrixTests.framework */,
+				1E6643D36229932680C117F0 /* Pods_DiarrixUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD7F0C591E99CA16000097C6 = {
+			isa = PBXGroup;
+			children = (
+				AD7F0C641E99CA16000097C6 /* Diarrix */,
+				AD7F0C791E99CA16000097C6 /* DiarrixTests */,
+				AD7F0C841E99CA16000097C6 /* DiarrixUITests */,
+				AD7F0C631E99CA16000097C6 /* Products */,
+				B83BE2AEDBCFD45273734145 /* Pods */,
+				A31FDCF3136A89829CA5C012 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AD7F0C631E99CA16000097C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD7F0C621E99CA16000097C6 /* Diarrix.app */,
+				AD7F0C761E99CA16000097C6 /* DiarrixTests.xctest */,
+				AD7F0C811E99CA16000097C6 /* DiarrixUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD7F0C641E99CA16000097C6 /* Diarrix */ = {
+			isa = PBXGroup;
+			children = (
+				AD7F0C651E99CA16000097C6 /* AppDelegate.swift */,
+				AD7F0C951E99CC7F000097C6 /* GoogleService-Info.plist */,
+				AD7F0C671E99CA16000097C6 /* ViewController.swift */,
+				AD7F0C691E99CA16000097C6 /* Main.storyboard */,
+				AD7F0C6C1E99CA16000097C6 /* Assets.xcassets */,
+				AD7F0C6E1E99CA16000097C6 /* LaunchScreen.storyboard */,
+				AD7F0C711E99CA16000097C6 /* Info.plist */,
+			);
+			path = Diarrix;
+			sourceTree = "<group>";
+		};
+		AD7F0C791E99CA16000097C6 /* DiarrixTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD7F0C7A1E99CA16000097C6 /* DiarrixTests.swift */,
+				AD7F0C7C1E99CA16000097C6 /* Info.plist */,
+			);
+			path = DiarrixTests;
+			sourceTree = "<group>";
+		};
+		AD7F0C841E99CA16000097C6 /* DiarrixUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AD7F0C851E99CA16000097C6 /* DiarrixUITests.swift */,
+				AD7F0C871E99CA16000097C6 /* Info.plist */,
+			);
+			path = DiarrixUITests;
+			sourceTree = "<group>";
+		};
+		B83BE2AEDBCFD45273734145 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77A143B7A6719DCF93DAE87E /* Pods-Diarrix.debug.xcconfig */,
+				B5E87A6EA5CD7CF16988EAFE /* Pods-Diarrix.release.xcconfig */,
+				B6919333C73043B2052F2FB1 /* Pods-DiarrixTests.debug.xcconfig */,
+				F6D6DC400F10D78BF1070AED /* Pods-DiarrixTests.release.xcconfig */,
+				51FD7C627A0103D612E180C7 /* Pods-DiarrixUITests.debug.xcconfig */,
+				84B0B0C3D59915D00C88E2A7 /* Pods-DiarrixUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD7F0C611E99CA16000097C6 /* Diarrix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD7F0C8A1E99CA17000097C6 /* Build configuration list for PBXNativeTarget "Diarrix" */;
+			buildPhases = (
+				25B87D620D8B622DA9FF0FA3 /* [CP] Check Pods Manifest.lock */,
+				AD7F0C5E1E99CA16000097C6 /* Sources */,
+				AD7F0C5F1E99CA16000097C6 /* Frameworks */,
+				AD7F0C601E99CA16000097C6 /* Resources */,
+				8BC96C4110BCF8C07A31D557 /* [CP] Embed Pods Frameworks */,
+				95B621BD4A2D82780CDCDAC5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Diarrix;
+			productName = Diarrix;
+			productReference = AD7F0C621E99CA16000097C6 /* Diarrix.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD7F0C751E99CA16000097C6 /* DiarrixTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD7F0C8D1E99CA17000097C6 /* Build configuration list for PBXNativeTarget "DiarrixTests" */;
+			buildPhases = (
+				88698F4BB3B2A88119E8C5F7 /* [CP] Check Pods Manifest.lock */,
+				AD7F0C721E99CA16000097C6 /* Sources */,
+				AD7F0C731E99CA16000097C6 /* Frameworks */,
+				AD7F0C741E99CA16000097C6 /* Resources */,
+				D78AB0B92C870ADDC96A7F0A /* [CP] Embed Pods Frameworks */,
+				841C5D5410F33BB4E7AB0DA8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD7F0C781E99CA16000097C6 /* PBXTargetDependency */,
+			);
+			name = DiarrixTests;
+			productName = DiarrixTests;
+			productReference = AD7F0C761E99CA16000097C6 /* DiarrixTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD7F0C801E99CA16000097C6 /* DiarrixUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD7F0C901E99CA17000097C6 /* Build configuration list for PBXNativeTarget "DiarrixUITests" */;
+			buildPhases = (
+				445682F6B6096211905A041C /* [CP] Check Pods Manifest.lock */,
+				AD7F0C7D1E99CA16000097C6 /* Sources */,
+				AD7F0C7E1E99CA16000097C6 /* Frameworks */,
+				AD7F0C7F1E99CA16000097C6 /* Resources */,
+				0BE357D8380917779AC64043 /* [CP] Embed Pods Frameworks */,
+				71CF0CDFABD05E6990FA1250 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD7F0C831E99CA16000097C6 /* PBXTargetDependency */,
+			);
+			name = DiarrixUITests;
+			productName = DiarrixUITests;
+			productReference = AD7F0C811E99CA16000097C6 /* DiarrixUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD7F0C5A1E99CA16000097C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Abhinav Ayalur";
+				TargetAttributes = {
+					AD7F0C611E99CA16000097C6 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					AD7F0C751E99CA16000097C6 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AD7F0C611E99CA16000097C6;
+					};
+					AD7F0C801E99CA16000097C6 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AD7F0C611E99CA16000097C6;
+					};
+				};
+			};
+			buildConfigurationList = AD7F0C5D1E99CA16000097C6 /* Build configuration list for PBXProject "Diarrix" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD7F0C591E99CA16000097C6;
+			productRefGroup = AD7F0C631E99CA16000097C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD7F0C611E99CA16000097C6 /* Diarrix */,
+				AD7F0C751E99CA16000097C6 /* DiarrixTests */,
+				AD7F0C801E99CA16000097C6 /* DiarrixUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD7F0C601E99CA16000097C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7F0C701E99CA16000097C6 /* LaunchScreen.storyboard in Resources */,
+				AD7F0C961E99CC7F000097C6 /* GoogleService-Info.plist in Resources */,
+				AD7F0C6D1E99CA16000097C6 /* Assets.xcassets in Resources */,
+				AD7F0C6B1E99CA16000097C6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD7F0C741E99CA16000097C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD7F0C7F1E99CA16000097C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BE357D8380917779AC64043 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiarrixUITests/Pods-DiarrixUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25B87D620D8B622DA9FF0FA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		445682F6B6096211905A041C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		71CF0CDFABD05E6990FA1250 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiarrixUITests/Pods-DiarrixUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		841C5D5410F33BB4E7AB0DA8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiarrixTests/Pods-DiarrixTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88698F4BB3B2A88119E8C5F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8BC96C4110BCF8C07A31D557 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Diarrix/Pods-Diarrix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95B621BD4A2D82780CDCDAC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Diarrix/Pods-Diarrix-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D78AB0B92C870ADDC96A7F0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DiarrixTests/Pods-DiarrixTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD7F0C5E1E99CA16000097C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7F0C681E99CA16000097C6 /* ViewController.swift in Sources */,
+				AD7F0C661E99CA16000097C6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD7F0C721E99CA16000097C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7F0C7B1E99CA16000097C6 /* DiarrixTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD7F0C7D1E99CA16000097C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7F0C861E99CA16000097C6 /* DiarrixUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD7F0C781E99CA16000097C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD7F0C611E99CA16000097C6 /* Diarrix */;
+			targetProxy = AD7F0C771E99CA16000097C6 /* PBXContainerItemProxy */;
+		};
+		AD7F0C831E99CA16000097C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD7F0C611E99CA16000097C6 /* Diarrix */;
+			targetProxy = AD7F0C821E99CA16000097C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD7F0C691E99CA16000097C6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD7F0C6A1E99CA16000097C6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD7F0C6E1E99CA16000097C6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD7F0C6F1E99CA16000097C6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD7F0C881E99CA17000097C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD7F0C891E99CA17000097C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD7F0C8B1E99CA17000097C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77A143B7A6719DCF93DAE87E /* Pods-Diarrix.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Diarrix/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = abhi12ayalur.Diarrix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AD7F0C8C1E99CA17000097C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5E87A6EA5CD7CF16988EAFE /* Pods-Diarrix.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Diarrix/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = abhi12ayalur.Diarrix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		AD7F0C8E1E99CA17000097C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6919333C73043B2052F2FB1 /* Pods-DiarrixTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DiarrixTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = abhi12ayalur.DiarrixTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Diarrix.app/Diarrix";
+			};
+			name = Debug;
+		};
+		AD7F0C8F1E99CA17000097C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6D6DC400F10D78BF1070AED /* Pods-DiarrixTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DiarrixTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = abhi12ayalur.DiarrixTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Diarrix.app/Diarrix";
+			};
+			name = Release;
+		};
+		AD7F0C911E99CA17000097C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51FD7C627A0103D612E180C7 /* Pods-DiarrixUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DiarrixUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = abhi12ayalur.DiarrixUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Diarrix;
+			};
+			name = Debug;
+		};
+		AD7F0C921E99CA17000097C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84B0B0C3D59915D00C88E2A7 /* Pods-DiarrixUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = DiarrixUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = abhi12ayalur.DiarrixUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Diarrix;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD7F0C5D1E99CA16000097C6 /* Build configuration list for PBXProject "Diarrix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7F0C881E99CA17000097C6 /* Debug */,
+				AD7F0C891E99CA17000097C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD7F0C8A1E99CA17000097C6 /* Build configuration list for PBXNativeTarget "Diarrix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7F0C8B1E99CA17000097C6 /* Debug */,
+				AD7F0C8C1E99CA17000097C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AD7F0C8D1E99CA17000097C6 /* Build configuration list for PBXNativeTarget "DiarrixTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7F0C8E1E99CA17000097C6 /* Debug */,
+				AD7F0C8F1E99CA17000097C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AD7F0C901E99CA17000097C6 /* Build configuration list for PBXNativeTarget "DiarrixUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7F0C911E99CA17000097C6 /* Debug */,
+				AD7F0C921E99CA17000097C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD7F0C5A1E99CA16000097C6 /* Project object */;
+}
