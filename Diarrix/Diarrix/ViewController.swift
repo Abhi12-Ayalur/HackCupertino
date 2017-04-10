@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var ref : FIRDatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("hello wordwocufhvuhuf")
 
         // Do any additional setup after loading the view, typically from a nib.
     }
