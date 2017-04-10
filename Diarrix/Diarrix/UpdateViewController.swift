@@ -21,6 +21,7 @@ class UpdateViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateDescriptionField.borderStyle = UITextBorderStyle.roundedRect
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.

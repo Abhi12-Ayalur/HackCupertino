@@ -18,6 +18,7 @@ class ReportViewController: UIViewController, CLLocationManagerDelegate {
     let locationManagerSuper = CLLocationManager()
     @IBOutlet weak var crType: UITextField!
     @IBOutlet weak var Description: UITextField!
+    
     func locationManagerF(manager: CLLocationManager!) -> Array<CLLocationDegrees> {
         var locValue:CLLocationCoordinate2D = manager.location!.coordinate
         return [locValue.latitude, locValue.longitude]
@@ -25,6 +26,7 @@ class ReportViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Description.borderStyle = UITextBorderStyle.roundedRect
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
