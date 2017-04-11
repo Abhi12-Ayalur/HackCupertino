@@ -55,6 +55,11 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
         self.performSegue(withIdentifier: "ToUpdates", sender: dataobject)
     }
     override func viewDidLoad() {
+        
+        //self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         events = []
         descriptions = []
         locations = []
@@ -129,10 +134,15 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
         cell.descriptionLabel?.text = descName
         
         var difference = (Int(date) - eventTime)/60
-        if difference > 60  {
+        if difference > 60 && difference < 120{
+            difference = difference/60
+            cell.timeLabel?.text = ("\(difference) hr")
+        }
+        else if difference > 60  {
             difference = difference/60
             cell.timeLabel?.text = ("\(difference) hrs")
         }
+        
         else{
             cell.timeLabel?.text = ("\(difference) mins")
         }
@@ -160,7 +170,7 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
 /*
         let myVC = storyboard?.instantiateViewController(withIdentifier: "EventUpdateVC") as! EventUpdateViewController
         let cell = tableView.cellForRow(at: <#T##IndexPath#>)
-        myVC.eventUpdateLabel.text = typeOfEventText
+        myVC.eventUpdateLabel.text = typefOfEventText
         navigationController?.pushViewController(myVC, animated: true)
         */
     

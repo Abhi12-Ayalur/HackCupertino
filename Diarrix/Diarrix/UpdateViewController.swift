@@ -21,11 +21,15 @@ class UpdateViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateDescriptionField.borderStyle = UITextBorderStyle.roundedRect
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func dismissUpdateDesc(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
