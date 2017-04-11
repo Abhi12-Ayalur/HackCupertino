@@ -14,6 +14,7 @@ var eventTxt = ""
 var eventDesc = ""
 var eventTime = ""
 var timestamp = ""
+var locationSuper = [0.0, 0.0]
 
 protocol MyCustomCellDelegator {
     func callSegueFromCell(myData dataobject: AnyObject)
@@ -23,23 +24,35 @@ protocol MyCustomCellDelegator {
 
 class newFeedTableViewCell: UITableViewCell{
     var delegate:MyCustomCellDelegator!
-    
+    var location: Array<CLLocationDegrees>!
     @IBAction func InfoButton(_ sender: Any) {
-        
+        print("pushed")
+        let ref = FIRDatabase.database().reference()
         let mydata = "meme"
         eventTxt = typeOfEventLabel.text!
         eventDesc = descriptionLabel.text!
         eventTime = timeLabel.text!
+        locationSuper = location
+        print(locationSuper)
+        /*ref.child("events").child(eventTime).observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            if let value = snapshot.value as? NSDictionary{
+                location = value["location"] as! Array<CLLocationDegrees>
+         
+            }
+        })*/
         
-        if(delegate != nil){
+        if (delegate != nil){
             delegate.callSegueFromCell(myData: mydata as AnyObject)
         }
+
     }
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var typeOfEventLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-}
+        //var time: Double!
+    }
 var events: Array<String> = []
 var descriptions : Array<String> = []
 var locations : Array<Array<CLLocationDegrees>> = []
@@ -130,9 +143,10 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
         let eventName = events[indexPath.row]
        
         let descName = descriptions[indexPath.row]
+        
         cell.typeOfEventLabel?.text = eventName
         cell.descriptionLabel?.text = descName
-        
+        cell.location = locations[indexPath.row]
         var difference = (Int(date) - eventTime)/60
         if difference > 60 && difference < 120{
             difference = difference/60
@@ -157,12 +171,12 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ToUpdates"){
             let vc = segue.destination as! EventUpdateViewController
+            print(locationSuper)
             vc.eventLabel = eventTxt
             
-            
+            vc.newlocation = locationSuper
             vc.eventTime = eventTime
             vc.descriptionLabel = eventDesc
-            vc.timestamp = timestamp
             
         }
     }

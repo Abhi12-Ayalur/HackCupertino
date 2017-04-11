@@ -8,9 +8,12 @@
 
 import UIKit
 import Firebase
+import CoreLocation
+import MapKit
 
-class EventUpdateViewController: UIViewController {
+class EventUpdateViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var eventUpdateLabel: UILabel!
     @IBOutlet weak var timeUpdateLabel: UILabel!
@@ -19,7 +22,10 @@ class EventUpdateViewController: UIViewController {
     var eventTime = ""
     var descriptionLabel = ""
     var timestamp = ""
+    var userlocation = [0.0, 0.0]
+    var newlocation = [0.0, 0.0]
     var ref : FIRDatabaseReference!
+    var locationManager : CLLocationManager!
     
     @IBAction func closeEventUpdateView(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -36,8 +42,31 @@ class EventUpdateViewController: UIViewController {
     }
     override func viewDidLoad() {
         
-     
+        let locationManagerSuper = CLLocationManager()
         super.viewDidLoad()
+        print(newlocation)
+        locationManagerSuper.requestAlwaysAuthorization()
+        locationManagerSuper.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled(){
+            locationManagerSuper.delegate = self
+            locationManagerSuper.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManagerSuper.startUpdatingLocation()
+            userlocation = [(locationManagerSuper.location?.coordinate.latitude)!, (locationManagerSuper.location?.coordinate.longitude)!]
+            let userCoord = CLLocation(latitude: userlocation[0], longitude: userlocation[1])
+            let regionRadius: CLLocationDistance = 5
+            let coordinateRegion = MKCoordinateRegionMakeWithDistance(userCoord.coordinate, regionRadius*2.0, regionRadius*2.0)
+            let userPin = MKPointAnnotation()
+            userPin.coordinate = CLLocationCoordinate2D(latitude: userlocation[0], longitude: userlocation[1])
+            userPin.title = "Your Location"
+            
+            let newPin = MKPointAnnotation()
+            newPin.coordinate = CLLocationCoordinate2D(latitude: newlocation[0], longitude: newlocation[1])
+            newPin.title = eventLabel
+            newPin.subtitle = descriptionLabel
+            mapView.addAnnotations([userPin, newPin])
+            print(userlocation)
+        }
+        
         popupView.layer.cornerRadius = 10
         popupView.layer.masksToBounds = true
         
