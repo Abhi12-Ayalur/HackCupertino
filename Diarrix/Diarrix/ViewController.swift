@@ -13,8 +13,11 @@ import FirebaseAuth
 class ViewController: UIViewController {
     var ref : FIRDatabaseReference!
     override func viewDidLoad() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         super.viewDidLoad()
-        print("hello wordwocufhvuhuf")
+       
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -60,7 +63,7 @@ class ViewController: UIViewController {
                         in
                         
                         if error != nil{
-                            print(error)
+                            
                             return
                         }
                         self.performSegue(withIdentifier: "SignUpToTab", sender: self)

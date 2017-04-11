@@ -83,6 +83,8 @@ class ReportViewController: UIViewController, CLLocationManagerDelegate {
         alertController.addAction(defaultAction)
         
         present(alertController, animated: true, completion: nil)
+        crType.text! = ""
+        Description.text! = ""
         
     }
         /*
