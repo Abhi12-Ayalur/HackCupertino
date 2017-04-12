@@ -14,13 +14,15 @@ class UpdateViewController: UIViewController {
     @IBOutlet weak var updateDescriptionField: UITextField!
     var ref : FIRDatabaseReference!
     var timestamp = ""
+    
     @IBAction func updateDescButton(_ sender: Any) {
         let ref = FIRDatabase.database().reference()
-      
+        print(timestamp)
         ref.child("events").child(timestamp).updateChildValues((["description": updateDescriptionField.text!]))
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         updateDescriptionField.borderStyle = UITextBorderStyle.roundedRect
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)

@@ -20,7 +20,7 @@ class resolvedFeedTableViewCell: UITableViewCell{
 var resolvedEvents: Array<String> = []
 var resolvedDescriptions : Array<String> = []
 var resolvedLocations : Array<Array<CLLocationDegrees>> = []
-var resolvedTime : Array<Int> = []
+var resolvedTime : Array<String> = []
 var resolvedEmail : Array<String> = []
 
 
@@ -39,7 +39,7 @@ class ResolvedFeedTableViewController: UITableViewController {
         super.viewDidLoad()
      
         let ref = FIRDatabase.database().reference()
-        ref.child("events").observeSingleEvent(of: .value, with: { snapshot in
+        ref.child("resolvedEvents").observeSingleEvent(of: .value, with: { snapshot in
            
             for rest in snapshot.children.allObjects as! [FIRDataSnapshot]{
                 
@@ -48,20 +48,16 @@ class ResolvedFeedTableViewController: UITableViewController {
                 
                 let value = rest.value as? NSDictionary
                 let resolved = (value!["resolved"] as? Int)
-                let eventTime = ((value!["date"] as? Int)!)
-                let difference = (Int(date) - eventTime)/60
-                if (resolved == 1) || (difference/60 > 24) {
-                    
-                    
+                let eventTime = ((value!["date"] as? String)!)
+                //let difference = (Int(date) - eventTime)/60
                         resolvedEvents.append(value!["typeCrime"] as? String ?? "")
                         
                         resolvedDescriptions.append(value!["description"] as? String ?? "")
                         resolvedEmail.append(value!["email"] as? String ?? "")
                         resolvedLocations.append((value!["location"] as? Array<CLLocationDegrees>)!)
                         
-                        resolvedTime.append((value!["date"] as? Int)!)
-                    
-                }
+                        resolvedTime.append((value!["date"] as? String ?? ""))
+                
                 
                 
             }
