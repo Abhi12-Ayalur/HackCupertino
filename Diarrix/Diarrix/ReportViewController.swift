@@ -85,7 +85,7 @@ class ReportViewController: UIViewController, CLLocationManagerDelegate {
         present(alertController, animated: true, completion: nil)
         crType.text! = ""
         Description.text! = ""
-        
+        //performSegue(withIdentifier: "toFeed", sender: self)
     }
         /*
      // MARK: - Navigation
