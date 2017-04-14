@@ -28,7 +28,7 @@ class newFeedTableViewCell: UITableViewCell{
     var time: String!
     @IBAction func InfoButton(_ sender: Any) {
         print("pushed")
-        let ref = FIRDatabase.database().reference()
+        
         let mydata = "meme"
         eventTxt = typeOfEventLabel.text!
         eventDesc = descriptionLabel.text!
@@ -75,23 +75,33 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
+       
+        
+        super.viewDidLoad()
+        
+        
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
+            self.tableView.reloadData()
+            
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         events = []
         descriptions = []
         locations = []
         time = []
         email  = []
         
-        super.viewDidLoad()
-        
         let ref = FIRDatabase.database().reference()
         ref.child("events").observeSingleEvent(of: .value, with: { snapshot in
-          
+            
             for rest in snapshot.children.allObjects as! [FIRDataSnapshot]{
                 let date = Date().timeIntervalSinceReferenceDate
                 let value = rest.value as? NSDictionary
-
-                let resolved = (value!["resolved"] as? Int)!
-                    
+                
                 let eventTime = ((value!["date"] as? Int)!)
                 timestamp = "\(eventTime)"
                 let difference = (Int(date) - eventTime)/60
@@ -102,7 +112,8 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
                     locations.append((value!["location"] as? Array<CLLocationDegrees>)!)
                     time.append((value!["date"] as? Int)!)
                 }
-                if difference/60 > 24{
+                
+                if difference/60 >= 24{
                     let event = value!["typeCrime"] as? String ?? ""
                     let description = value!["description"] as? String ?? ""
                     let email = value!["email"] as? String ?? ""
@@ -111,16 +122,14 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
                     let valDict = ["typeCrime": event, "description": description, "location": location, "date": "\(time)"] as [String : Any]
                     ref.child("resolvedEvents").child("\(time)").updateChildValues(valDict)
                     ref.child("events").child("\(time)").setValue(nil)
+                    
                 }
-                
             }
-           
-            self.tableView.delegate = self
-            self.tableView.dataSource = self
-            self.tableView.reloadData()
             
-        })
+            self.tableView.reloadData()
+    })
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -167,7 +176,6 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
             cell.timeLabel?.text = ("\(difference) mins")
         }
         
-        //typeOfEventText = eventName
        
 
         return cell

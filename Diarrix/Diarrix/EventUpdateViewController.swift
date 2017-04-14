@@ -38,7 +38,7 @@ class EventUpdateViewController: UIViewController, CLLocationManagerDelegate, MK
         print(timestamp)
         print("hello")
         ref.child("events").child(timestamp).setValue(nil)
-        var resolvedVals = ["location": userlocation, "typeCrime": eventLabel, "description": descriptionLabel, "date": timestamp] as [String : Any]
+        let resolvedVals = ["location": userlocation, "typeCrime": eventLabel, "description": descriptionLabel, "date": timestamp] as [String : Any]
         ref.child("resolvedEvents").child(timestamp).updateChildValues(resolvedVals)
         let alertController = UIAlertController(title: "Success", message: "The event has been resolved", preferredStyle: .alert)
         

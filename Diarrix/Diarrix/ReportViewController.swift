@@ -17,17 +17,22 @@ class ReportViewController: UIViewController, CLLocationManagerDelegate {
     var coords: Array<CLLocationDegrees>?
     let locationManagerSuper = CLLocationManager()
     @IBOutlet weak var crType: UITextField!
-    @IBOutlet weak var Description: UITextField!
+    @IBOutlet weak var Description: UITextView!
+    //@IBOutlet weak var Description: UITextField!
     
     func locationManagerF(manager: CLLocationManager!) -> Array<CLLocationDegrees> {
-        var locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         return [locValue.latitude, locValue.longitude]
     }
     
     override func viewDidLoad() {
+        Description.layer.cornerRadius = 5
+        Description.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
+        Description.layer.borderWidth = 0.5
+        Description.clipsToBounds = true
         super.viewDidLoad()
-        Description.borderStyle = UITextBorderStyle.roundedRect
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ReportViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         ref = FIRDatabase.database().reference()

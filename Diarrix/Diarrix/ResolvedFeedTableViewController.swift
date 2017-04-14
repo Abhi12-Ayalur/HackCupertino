@@ -30,49 +30,52 @@ class ResolvedFeedTableViewController: UITableViewController {
     
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         resolvedEvents = []
         resolvedDescriptions = []
         resolvedLocations = []
         resolvedTime = []
         resolvedEmail  = []
-        
-        super.viewDidLoad()
-     
-        let ref = FIRDatabase.database().reference()
-        ref.child("resolvedEvents").observeSingleEvent(of: .value, with: { snapshot in
-           
-            for rest in snapshot.children.allObjects as! [FIRDataSnapshot]{
-                
-                let date = Date().timeIntervalSinceReferenceDate
-                
-                
-                let value = rest.value as? NSDictionary
-                let resolved = (value!["resolved"] as? Int)
-                let eventTime = ((value!["date"] as? String)!)
-                //let difference = (Int(date) - eventTime)/60
-                        resolvedEvents.append(value!["typeCrime"] as? String ?? "")
-                        
-                        resolvedDescriptions.append(value!["description"] as? String ?? "")
-                        resolvedEmail.append(value!["email"] as? String ?? "")
-                        resolvedLocations.append((value!["location"] as? Array<CLLocationDegrees>)!)
-                        
-                        resolvedTime.append((value!["date"] as? String ?? ""))
-                
-                
-                
-            }
-            
-            self.tableView.delegate = self
-            self.tableView.dataSource = self
-            self.tableView.reloadData()
-            
-        })
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.reloadData()
     }
 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let ref = FIRDatabase.database().reference()
+        
+        ref.child("resolvedEvents").observeSingleEvent(of: .value, with: { snapshot in
+            
+            for rest in snapshot.children.allObjects as! [FIRDataSnapshot]{
+                
+                //let date = Date().timeIntervalSinceReferenceDate
+                
+                
+                let value = rest.value as? NSDictionary
+                //let resolved = (value!["resolved"] as? Int)
+                //let eventTime = ((value!["date"] as? String)!)
+                //let difference = (Int(date) - eventTime)/60
+                resolvedEvents.append(value!["typeCrime"] as? String ?? "")
+                
+                resolvedDescriptions.append(value!["description"] as? String ?? "")
+                resolvedEmail.append(value!["email"] as? String ?? "")
+                resolvedLocations.append((value!["location"] as? Array<CLLocationDegrees>)!)
+                
+                resolvedTime.append((value!["date"] as? String ?? ""))
+                
+            }
+            
+          self.tableView.reloadData()
+        })
+        
+        
     }
 
     // MARK: - Table view data source
@@ -88,24 +91,22 @@ class ResolvedFeedTableViewController: UITableViewController {
     }
     var typeOfEventText: String = ""
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "resolvedCell", for: indexPath) as! resolvedFeedTableViewCell
         
         let eventName = resolvedEvents[indexPath.row]
-      
         let descName = resolvedDescriptions[indexPath.row]
+        
         cell.typeOfResolvedEventLabel?.text = eventName
         cell.resolvedDescriptionLabel?.text = descName
         
         
-        //typeOfEventText = eventName
+        
         
         
         return cell
         
     }
     
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
