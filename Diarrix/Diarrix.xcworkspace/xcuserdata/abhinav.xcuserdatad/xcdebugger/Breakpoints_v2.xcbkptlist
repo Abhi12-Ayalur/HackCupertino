@@ -36,13 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Diarrix/NewFeedTableViewController.swift"
-            timestampString = "513728423.54499"
+            timestampString = "513985497.305225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            startingLineNumber = "215"
+            endingLineNumber = "215">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -68,12 +66,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Diarrix/NewFeedTableViewController.swift"
-            timestampString = "513728423.54499"
+            timestampString = "513985497.305225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

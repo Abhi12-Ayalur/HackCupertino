@@ -14,7 +14,8 @@ var eventTxt = ""
 var eventDesc = ""
 var eventTime = ""
 var timestamp = ""
-var locationSuper = [0.0, 0.0]
+var locationSuper:Array<CLLocationDegrees> = [0.0, 0.0]
+var selfCoords:Array<CLLocationDegrees> = [0.0, 0.0]
 
 protocol MyCustomCellDelegator {
     func callSegueFromCell(myData dataobject: AnyObject)
@@ -23,7 +24,9 @@ protocol MyCustomCellDelegator {
 class newFeedTableViewCell: UITableViewCell{
     var delegate:MyCustomCellDelegator!
     var location: Array<CLLocationDegrees>!
+    var distance: String!
     var time: String!
+    @IBOutlet weak var distLabel: UILabel!
     
     @IBAction func InfoButton(_ sender: Any) {
         
@@ -53,11 +56,11 @@ var descriptions : Array<String> = []
 var locations : Array<Array<CLLocationDegrees>> = []
 var time : Array<Int> = []
 var email : Array<String> = []
+var distance : Array<String> = []
 
-
-class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
+class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator, CLLocationManagerDelegate{
     var ref : FIRDatabaseReference!
-    
+    let locationManagerSuper = CLLocationManager()
     @IBOutlet var eventTableView: UITableView!
     func  callSegueFromCell(myData dataobject: AnyObject){
         self.performSegue(withIdentifier: "ToUpdates", sender: dataobject)
@@ -85,6 +88,21 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
         email  = []
         print("ran")
         let ref = FIRDatabase.database().reference()
+        let locationManager = self.locationManagerSuper
+        locationManager.requestAlwaysAuthorization()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        selfCoords = [locationManager.location!.coordinate.latitude, locationManager.location!.coordinate.longitude]
+        
+
         ref.child("events").observeSingleEvent(of: .value, with: { snapshot in
             
             for rest in snapshot.children.allObjects as! [FIRDataSnapshot]{
@@ -92,14 +110,27 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
                 let value = rest.value as? NSDictionary
                 
                 let eventTime = ((value!["date"] as? Int)!)
+                let testCoords = (value!["location"] as? Array<CLLocationDegrees>)
+                let userCoords = selfCoords
+                let testLoc = CLLocation(latitude: testCoords![0], longitude: testCoords![1])
+                print(testLoc)
+                
+                let userLoc = CLLocation(latitude: userCoords[0], longitude: userCoords[1])
+                print(userLoc)
+                var userDist = userLoc.distance(from: testLoc) * 0.000621371
+                userDist = round(userDist * 100.0) / 100.0
+                print("distance: \(userDist)")
+                let distString = "\(userDist) mins"
+                //let
                 timestamp = "\(eventTime)"
                 let difference = (Int(date) - eventTime)/60
-                if difference/60 < 24{
+                if (difference/60 < 24) && (userDist < 5.0){
                     events.append(value!["typeCrime"] as? String ?? "")
                     descriptions.append(value!["description"] as? String ?? "")
                     email.append(value!["email"] as? String ?? "")
                     locations.append((value!["location"] as? Array<CLLocationDegrees>)!)
                     time.append((value!["date"] as? Int)!)
+                    distance.append(distString)
                 }
                 
                 if difference/60 >= 24{
@@ -139,6 +170,7 @@ class NewFeedTableViewController: UITableViewController, MyCustomCellDelegator{
         cell.descriptionLabel?.text = descName
         cell.location = locations[indexPath.row]
         cell.time = "\(time[indexPath.row])"
+        cell.distLabel.text = distance[indexPath.row]
         var difference = (Int(date) - eventTime)/60
         if difference > 60 && difference < 120{
             difference = difference/60

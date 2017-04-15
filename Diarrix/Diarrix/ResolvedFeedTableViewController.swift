@@ -24,8 +24,8 @@ var resolvedTime : Array<String> = []
 var resolvedEmail : Array<String> = []
 
 
-class ResolvedFeedTableViewController: UITableViewController {
-    
+class ResolvedFeedTableViewController: UITableViewController, CLLocationManagerDelegate{
+    let locationManagerSuper = CLLocationManager()
     
     
 
@@ -51,6 +51,19 @@ class ResolvedFeedTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         let ref = FIRDatabase.database().reference()
         
+        let locationManager = self.locationManagerSuper
+        locationManager.requestAlwaysAuthorization()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        let selfCoords = [locationManager.location!.coordinate.latitude, locationManager.location!.coordinate.longitude]
         ref.child("resolvedEvents").observeSingleEvent(of: .value, with: { snapshot in
             
             for rest in snapshot.children.allObjects as! [FIRDataSnapshot]{
@@ -62,6 +75,16 @@ class ResolvedFeedTableViewController: UITableViewController {
                 //let resolved = (value!["resolved"] as? Int)
                 //let eventTime = ((value!["date"] as? String)!)
                 //let difference = (Int(date) - eventTime)/60
+                let testCoords = (value!["location"] as? Array<CLLocationDegrees>)
+                let userCoords = selfCoords
+                let testLoc = CLLocation(latitude: testCoords![0], longitude: testCoords![1])
+                print(testLoc)
+                
+                let userLoc = CLLocation(latitude: userCoords[0], longitude: userCoords[1])
+                print(userLoc)
+                let userDist = userLoc.distance(from: testLoc) * 0.000621371
+                print("distance: \(userDist)")
+                if userDist < 5.0 {
                 resolvedEvents.append(value!["typeCrime"] as? String ?? "")
                 
                 resolvedDescriptions.append(value!["description"] as? String ?? "")
@@ -69,9 +92,10 @@ class ResolvedFeedTableViewController: UITableViewController {
                 resolvedLocations.append((value!["location"] as? Array<CLLocationDegrees>)!)
                 
                 resolvedTime.append((value!["date"] as? String ?? ""))
-                
+                }
             }
-            
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
           self.tableView.reloadData()
         })
         

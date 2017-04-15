@@ -63,7 +63,7 @@ class EventUpdateViewController: UIViewController, CLLocationManagerDelegate, MK
             locationManagerSuper.startUpdatingLocation()
             userlocation = [(locationManagerSuper.location?.coordinate.latitude)!, (locationManagerSuper.location?.coordinate.longitude)!]
             let userCoord = CLLocation(latitude: userlocation[0], longitude: userlocation[1])
-            let regionRadius: CLLocationDistance = 50*1000
+            let regionRadius: CLLocationDistance = 15.0*1000
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(userCoord.coordinate, regionRadius*2.0, regionRadius*2.0)
             mapView.setRegion(coordinateRegion, animated: true)
             let userPin = MKPointAnnotation()

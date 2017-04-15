@@ -69,6 +69,7 @@ class ReportViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     @IBAction func Submit(_ sender: Any) {
+        if crType.text != "" && Description.text != "Description"{
         let date = Date().timeIntervalSinceReferenceDate
         let ref = FIRDatabase.database().reference()
         print(self.coords!)
@@ -84,7 +85,7 @@ class ReportViewController: UIViewController, CLLocationManagerDelegate {
         present(alertController, animated: true, completion: nil)
         crType.text! = ""
         Description.text! = ""
-        
+        }
     }
     
 }
