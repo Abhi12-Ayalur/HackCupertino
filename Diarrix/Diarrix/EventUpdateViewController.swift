@@ -17,7 +17,8 @@ class EventUpdateViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var eventUpdateLabel: UILabel!
     @IBOutlet weak var timeUpdateLabel: UILabel!
-    @IBOutlet weak var descriptionUpdateLabel: UILabel!
+    
+    var newFeedController: NewFeedTableViewController?
     
     @IBOutlet weak var descriptionText: UITextView!
     var eventLabel = ""
@@ -47,6 +48,7 @@ class EventUpdateViewController: UIViewController, CLLocationManagerDelegate, MK
         
         present(alertController, animated: true, completion: nil)
         dismiss(animated: true, completion: nil)
+        
     }
     override func viewDidLoad() {
         

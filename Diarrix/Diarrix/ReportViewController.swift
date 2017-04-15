@@ -45,7 +45,7 @@ class ReportViewController: UIViewController, CLLocationManagerDelegate {
             let password = value?["Password"] as? String ?? ""
             print(password)
             
-            // ...
+          
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -62,18 +62,12 @@ class ReportViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         self.coords = locationManagerF(manager: locationManager)
-        // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     func dismissKeyboard() {
         view.endEditing(true)
     }
 
-    
     @IBAction func Submit(_ sender: Any) {
         let date = Date().timeIntervalSinceReferenceDate
         let ref = FIRDatabase.database().reference()
@@ -90,16 +84,7 @@ class ReportViewController: UIViewController, CLLocationManagerDelegate {
         present(alertController, animated: true, completion: nil)
         crType.text! = ""
         Description.text! = ""
-        //performSegue(withIdentifier: "toFeed", sender: self)
+        
     }
-        /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
