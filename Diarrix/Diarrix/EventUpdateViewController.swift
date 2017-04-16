@@ -34,6 +34,7 @@ class EventUpdateViewController: UIViewController, CLLocationManagerDelegate, MK
     @IBAction func closeEventUpdateView(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func resolveEvent(_ sender: Any) {
         let ref = FIRDatabase.database().reference()
         print(timestamp)
@@ -50,10 +51,11 @@ class EventUpdateViewController: UIViewController, CLLocationManagerDelegate, MK
         dismiss(animated: true, completion: nil)
         
     }
+    
     override func viewDidLoad() {
+         super.viewDidLoad()
         
         let locationManagerSuper = CLLocationManager()
-        super.viewDidLoad()
         print(newlocation)
         locationManagerSuper.requestAlwaysAuthorization()
         locationManagerSuper.requestWhenInUseAuthorization()

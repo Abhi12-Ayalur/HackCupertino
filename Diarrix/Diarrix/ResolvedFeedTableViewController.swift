@@ -10,41 +10,16 @@ import UIKit
 import Firebase
 import CoreLocation
 
-class resolvedFeedTableViewCell: UITableViewCell{
-    
-    @IBOutlet weak var typeOfResolvedEventLabel: UILabel!
-    @IBOutlet weak var resolvedDescriptionLabel: UILabel!
-    
 
-}
-var resolvedEvents: Array<String> = []
-var resolvedDescriptions : Array<String> = []
-var resolvedLocations : Array<Array<CLLocationDegrees>> = []
-var resolvedTime : Array<String> = []
-var resolvedEmail : Array<String> = []
-
-
-class ResolvedFeedTableViewController: UITableViewController, CLLocationManagerDelegate{
-    let locationManagerSuper = CLLocationManager()
-    
-    
+class ResolvedFeedTableViewController: UITableViewController {
+    var resolvedEventArray = [Event]()
+    var locationManagerSuper = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        resolvedEvents = []
-        resolvedDescriptions = []
-        resolvedLocations = []
-        resolvedTime = []
-        resolvedEmail  = []
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.reloadData()
-    }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,13 +28,13 @@ class ResolvedFeedTableViewController: UITableViewController, CLLocationManagerD
         
         let locationManager = self.locationManagerSuper
         locationManager.requestAlwaysAuthorization()
-        locationManager.delegate = self
+        locationManager.delegate = self as? CLLocationManagerDelegate
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
+            locationManager.delegate = self as? CLLocationManagerDelegate
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
@@ -68,34 +43,19 @@ class ResolvedFeedTableViewController: UITableViewController, CLLocationManagerD
             
             for rest in snapshot.children.allObjects as! [FIRDataSnapshot]{
                 
-                //let date = Date().timeIntervalSinceReferenceDate
-                
+                let resolvedEvent = Event()
                 
                 let value = rest.value as? NSDictionary
-                //let resolved = (value!["resolved"] as? Int)
-                //let eventTime = ((value!["date"] as? String)!)
-                //let difference = (Int(date) - eventTime)/60
-                let testCoords = (value!["location"] as? Array<CLLocationDegrees>)
-                let userCoords = selfCoords
-                let testLoc = CLLocation(latitude: testCoords![0], longitude: testCoords![1])
-                print(testLoc)
+
+                resolvedEvent.eventName = value!["typeCrime"] as? String ?? ""
+                resolvedEvent.description = value!["description"] as? String ?? ""
+                resolvedEvent.email = value!["email"] as? String ?? ""
+                resolvedEvent.location = (value!["location"] as? Array<CLLocationDegrees>)!
+                resolvedEvent.time = Int(value!["date"] as? String ?? "")!
+                self.resolvedEventArray.append(resolvedEvent)
                 
-                let userLoc = CLLocation(latitude: userCoords[0], longitude: userCoords[1])
-                print(userLoc)
-                let userDist = userLoc.distance(from: testLoc) * 0.000621371
-                print("distance: \(userDist)")
-                if userDist < 5.0 {
-                resolvedEvents.append(value!["typeCrime"] as? String ?? "")
-                
-                resolvedDescriptions.append(value!["description"] as? String ?? "")
-                resolvedEmail.append(value!["email"] as? String ?? "")
-                resolvedLocations.append((value!["location"] as? Array<CLLocationDegrees>)!)
-                
-                resolvedTime.append((value!["date"] as? String ?? ""))
-                }
             }
-            self.tableView.delegate = self
-            self.tableView.dataSource = self
+
           self.tableView.reloadData()
         })
         
@@ -110,22 +70,20 @@ class ResolvedFeedTableViewController: UITableViewController, CLLocationManagerD
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return (resolvedEvents.count)
+        
+        return (resolvedEventArray.count)
     }
     var typeOfEventText: String = ""
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resolvedCell", for: indexPath) as! resolvedFeedTableViewCell
         
-        let eventName = resolvedEvents[indexPath.row]
-        let descName = resolvedDescriptions[indexPath.row]
+        let resolvedEvent = resolvedEventArray[indexPath.row]
+        
+        let eventName = resolvedEvent.eventName
+        let descName = resolvedEvent.description
         
         cell.typeOfResolvedEventLabel?.text = eventName
         cell.resolvedDescriptionLabel?.text = descName
-        
-        
-        
-        
         
         return cell
         

@@ -11,7 +11,6 @@
 		530849CD8448FDB90A9F1691 /* Pods_DiarrixTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468A33368E8D8532CDA4E126 /* Pods_DiarrixTests.framework */; };
 		AD7F0C661E99CA16000097C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F0C651E99CA16000097C6 /* AppDelegate.swift */; };
 		AD7F0C681E99CA16000097C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F0C671E99CA16000097C6 /* ViewController.swift */; };
-		AD7F0C6B1E99CA16000097C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7F0C691E99CA16000097C6 /* Main.storyboard */; };
 		AD7F0C6D1E99CA16000097C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7F0C6C1E99CA16000097C6 /* Assets.xcassets */; };
 		AD7F0C701E99CA16000097C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7F0C6E1E99CA16000097C6 /* LaunchScreen.storyboard */; };
 		AD7F0C7B1E99CA16000097C6 /* DiarrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F0C7A1E99CA16000097C6 /* DiarrixTests.swift */; };
@@ -19,6 +18,10 @@
 		AD7F0C961E99CC7F000097C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD7F0C951E99CC7F000097C6 /* GoogleService-Info.plist */; };
 		ADDE1E601E9F33A600074CC5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDE1E5F1E9F33A600074CC5 /* ProfileViewController.swift */; };
 		B12C5DFDD8D90CCA35DDF0B0 /* Pods_DiarrixUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6643D36229932680C117F0 /* Pods_DiarrixUITests.framework */; };
+		E9400EA31EA2C78300D3E1CA /* NewFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9400EA21EA2C78300D3E1CA /* NewFeedTableViewCell.swift */; };
+		E9400EA51EA2C90000D3E1CA /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9400EA41EA2C90000D3E1CA /* Event.swift */; };
+		E9400EA91EA3111A00D3E1CA /* ResolvedFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9400EA81EA3111A00D3E1CA /* ResolvedFeedTableViewCell.swift */; };
+		E9400EAB1EA3197D00D3E1CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9400EAA1EA3197D00D3E1CA /* Main.storyboard */; };
 		E98F9E4D1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98F9E4C1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf */; };
 		E9962BF61E99F7CD004F1182 /* NewFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9962BF51E99F7CD004F1182 /* NewFeedTableViewController.swift */; };
 		E9962BFC1E9A088C004F1182 /* ResolvedFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9962BFB1E9A088C004F1182 /* ResolvedFeedTableViewController.swift */; };
@@ -55,7 +58,6 @@
 		AD7F0C621E99CA16000097C6 /* Diarrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diarrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7F0C651E99CA16000097C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD7F0C671E99CA16000097C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AD7F0C6A1E99CA16000097C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD7F0C6C1E99CA16000097C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD7F0C6F1E99CA16000097C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD7F0C711E99CA16000097C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +71,10 @@
 		ADDE1E5F1E9F33A600074CC5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B5E87A6EA5CD7CF16988EAFE /* Pods-Diarrix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diarrix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diarrix/Pods-Diarrix.release.xcconfig"; sourceTree = "<group>"; };
 		B6919333C73043B2052F2FB1 /* Pods-DiarrixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiarrixTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DiarrixTests/Pods-DiarrixTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9400EA21EA2C78300D3E1CA /* NewFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeedTableViewCell.swift; sourceTree = "<group>"; };
+		E9400EA41EA2C90000D3E1CA /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E9400EA81EA3111A00D3E1CA /* ResolvedFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolvedFeedTableViewCell.swift; sourceTree = "<group>"; };
+		E9400EAA1EA3197D00D3E1CA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E98F9E4C1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neutra-Text-TF-Light-Alt_32149.ttf"; sourceTree = "<group>"; };
 		E9962BF51E99F7CD004F1182 /* NewFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeedTableViewController.swift; sourceTree = "<group>"; };
 		E9962BFB1E9A088C004F1182 /* ResolvedFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolvedFeedTableViewController.swift; sourceTree = "<group>"; };
@@ -142,14 +148,17 @@
 		AD7F0C641E99CA16000097C6 /* Diarrix */ = {
 			isa = PBXGroup;
 			children = (
+				E9400EAA1EA3197D00D3E1CA /* Main.storyboard */,
 				AD7F0C651E99CA16000097C6 /* AppDelegate.swift */,
 				ADDE1E5F1E9F33A600074CC5 /* ProfileViewController.swift */,
 				AD7F0C951E99CC7F000097C6 /* GoogleService-Info.plist */,
 				AD7F0C671E99CA16000097C6 /* ViewController.swift */,
-				AD7F0C691E99CA16000097C6 /* Main.storyboard */,
 				E9B447C61E9C745100D81A26 /* MainTabBarController.swift */,
 				E9962BFB1E9A088C004F1182 /* ResolvedFeedTableViewController.swift */,
+				E9400EA81EA3111A00D3E1CA /* ResolvedFeedTableViewCell.swift */,
 				E9962BF51E99F7CD004F1182 /* NewFeedTableViewController.swift */,
+				E9400EA41EA2C90000D3E1CA /* Event.swift */,
+				E9400EA21EA2C78300D3E1CA /* NewFeedTableViewCell.swift */,
 				E9A6C6871E9A706200B949D6 /* ReportViewController.swift */,
 				E9A6C6851E9A6CDA00B949D6 /* UpdateViewController.swift */,
 				E9A6C6831E9A352E00B949D6 /* EventUpdateViewController.swift */,
@@ -310,9 +319,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD7F0C701E99CA16000097C6 /* LaunchScreen.storyboard in Resources */,
+				E9400EAB1EA3197D00D3E1CA /* Main.storyboard in Resources */,
 				AD7F0C961E99CC7F000097C6 /* GoogleService-Info.plist in Resources */,
 				AD7F0C6D1E99CA16000097C6 /* Assets.xcassets in Resources */,
-				AD7F0C6B1E99CA16000097C6 /* Main.storyboard in Resources */,
 				E98F9E4D1E99CFC100703770 /* Neutra-Text-TF-Light-Alt_32149.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,9 +485,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9400EA31EA2C78300D3E1CA /* NewFeedTableViewCell.swift in Sources */,
+				E9400EA51EA2C90000D3E1CA /* Event.swift in Sources */,
 				E9A6C6841E9A352E00B949D6 /* EventUpdateViewController.swift in Sources */,
 				E9962BF61E99F7CD004F1182 /* NewFeedTableViewController.swift in Sources */,
 				E9B447C71E9C745100D81A26 /* MainTabBarController.swift in Sources */,
+				E9400EA91EA3111A00D3E1CA /* ResolvedFeedTableViewCell.swift in Sources */,
 				AD7F0C681E99CA16000097C6 /* ViewController.swift in Sources */,
 				AD7F0C661E99CA16000097C6 /* AppDelegate.swift in Sources */,
 				E9962BFC1E9A088C004F1182 /* ResolvedFeedTableViewController.swift in Sources */,
@@ -520,14 +532,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AD7F0C691E99CA16000097C6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD7F0C6A1E99CA16000097C6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AD7F0C6E1E99CA16000097C6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
